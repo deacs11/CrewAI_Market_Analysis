@@ -71,7 +71,3 @@ This code is designed to run in a Google Colab notebook but can be adapted for l
 *   **LLM Hallucinations:** AI models can sometimes generate inaccurate or fabricated information ("hallucinations"). The quality of the final report depends heavily on the LLM's capabilities and the information it can access.
 *   **Rate Limits:** You might encounter API rate limits from OpenAI or Serper, especially on free tiers or during high usage.
 *   **Information Accuracy:** The analysis is based on publicly available information retrieved by the agents at the time of execution. Always verify critical information from primary sources.
-
-## License
-
-Consider adding a license file (e.g., `LICENSE`) to your repository. The [MIT License](https://opensource.org/licenses/MIT) is a common permissive choice.
