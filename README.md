@@ -27,7 +27,7 @@ This code is designed to run in a Google Colab notebook but can be adapted for l
 2.  **Open in Colab:** Upload and open the notebook in Google Colab ([colab.research.google.com](https://colab.research.google.com/)).
 3.  **Install Libraries:** Run the first cell (`# @title 1. Install Necessary Libraries`) to install `crewai`, `crewai-tools`, `langchain-openai`, etc.
 4.  **Configure API Keys in Colab Secrets:**
-    *   In Colab, click the **Key icon (`<>`)** in the left sidebar ("Secrets").
+    *   In Colab, click the **Key icon** in the left sidebar ("Secrets").
     *   Enable "Notebook access".
     *   Add two new secrets:
         *   Name: `OPENAI_API_KEY` | Value: Your OpenAI API Key (starts with `sk-...`)
