@@ -1,4 +1,4 @@
-# CrewAI Market Analysis Agent Crew
+# CrewAI Market analysis agent crew
 
 This project demonstrates how to use the CrewAI framework to create a team of AI agents that collaboratively perform a market sector analysis. The agents identify key players, gather information about them, analyze industry trends, and compile a final report.
 
@@ -6,11 +6,11 @@ This code is designed to run in a Google Colab notebook but can be adapted for l
 
 ## Features
 
-*   **Automated Market Research:** Leverages AI agents for research tasks.
-*   **Key Player Identification:** Uses web search (via Serper.dev) to find major companies in a specified sector.
-*   **Company Data Gathering:** Extracts profiles, product/service info, and recent news using web reading tools.
-*   **Sector Trend Analysis:** Synthesizes collected data to identify market trends, business models, and challenges.
-*   **Report Generation:** Compiles the findings into a structured market analysis report.
+*   **Automated market research:** Leverages AI agents for research tasks.
+*   **Key player identification:** Uses web search (via Serper.dev) to find major companies in a specified sector.
+*   **Company data gathering:** Extracts profiles, product/service info, and recent news using web reading tools.
+*   **Sector trend analysis:** Synthesizes collected data to identify market trends, business models, and challenges.
+*   **Report generation:** Compiles the findings into a structured market analysis report.
 *   **Powered by CrewAI:** Built using the flexible CrewAI framework for multi-agent collaboration.
 
 ## Requirements
@@ -23,9 +23,9 @@ This code is designed to run in a Google Colab notebook but can be adapted for l
 
 ## Setup
 
-1.  **Clone or Download:** Get the code (e.g., the `.ipynb` notebook file).
+1.  **Clone or download:** Get the code (e.g., the `.ipynb` notebook file).
 2.  **Open in Colab:** Upload and open the notebook in Google Colab ([colab.research.google.com](https://colab.research.google.com/)).
-3.  **Install Libraries:** Run the first cell (`# @title 1. Install Necessary Libraries`) to install `crewai`, `crewai-tools`, `langchain-openai`, etc.
+3.  **Install libraries:** Run the first cell (`# @title 1. Install Necessary Libraries`) to install `crewai`, `crewai-tools`, `langchain-openai`, etc.
 4.  **Configure API Keys in Colab Secrets:**
     *   In Colab, click the **Key icon** in the left sidebar ("Secrets").
     *   Enable "Notebook access".
@@ -35,39 +35,39 @@ This code is designed to run in a Google Colab notebook but can be adapted for l
     *   Ensure the **toggle switch** next to both secrets is **ON** to allow notebook access.
 5.  **Run Cell 2:** Execute the second cell (`# @title 2. Import Modules...`) to load the keys into the environment. Verify the output confirms keys are found.
 
-## How to Use
+## How to use
 
-1.  **Define Sector:** In Cell 3 (`# @title 3. Define the Sector...`), modify the `sector_to_analyze` variable to specify the market or industry you want to research.
-2.  **Select LLM (Optional):** In Cell 4 (`# @title 4. Select LLM...`), you can choose between `gpt-4-turbo` (more capable, higher cost) or `gpt-3.5-turbo` (cheaper) by uncommenting the desired line.
+1.  **Define sector:** In Cell 3 (`# @title 3. Define the Sector...`), modify the `sector_to_analyze` variable to specify the market or industry you want to research.
+2.  **Select LLM (optional):** In Cell 4 (`# @title 4. Select LLM...`), you can choose between `gpt-4-turbo` (more capable, higher cost) or `gpt-3.5-turbo` (cheaper) by uncommenting the desired line.
 3.  **Run All Cells:** Execute the remaining cells (4 through 8) sequentially.
     *   Cell 5 defines the agents.
     *   Cell 6 defines the tasks.
     *   Cell 7 creates the Crew and starts the analysis process by calling `kickoff()`. This step will take some time and consume API credits. You'll see verbose output showing the agents' thought processes.
     *   Cell 8 displays the final generated market report.
 
-## Code Structure (Cells)
+## Code structure (Cells)
 
 1.  **Installation:** Installs required Python packages.
 2.  **Imports & API Keys:** Imports libraries and loads API keys from Colab Secrets.
-3.  **Define Sector:** Sets the target market for analysis. **(User modification required)**
-4.  **LLM & Tools:** Selects the OpenAI model and initializes tools (Search, Web Reader).
+3.  **Define sector:** Sets the target market for analysis. **(User modification required)**
+4.  **LLM & tools:** Selects the OpenAI model and initializes tools (Search, Web Reader).
 5.  **Define Agents:** Creates the CrewAI agents with specific roles, goals, and backstories for market analysis.
 6.  **Define Tasks:** Defines the sequence of tasks the agents will perform (Identify Players, Gather Data, Analyze Sector, Write Report).
-7.  **Create & Run Crew:** Assembles the agents and tasks into a `Crew` object and starts the execution using `kickoff()`.
-8.  **Display Result:** Prints the final output generated by the crew (the market report).
+7.  **Create & run Crew:** Assembles the agents and tasks into a `Crew` object and starts the execution using `kickoff()`.
+8.  **Display result:** Prints the final output generated by the crew (the market report).
 
 ## Customization
 
-*   **Number of Players:** Modify the goal/description in `market_player_identifier` (Agent 1) and `task_identify_players` (Task 1) to change the number of companies researched (e.g., top 3, top 10). Adjust subsequent tasks accordingly if needed.
-*   **Agent Prompts:** Refine the `role`, `goal`, and `backstory` of the agents in Cell 5 to steer their behavior.
-*   **Task Descriptions:** Modify the `description` and `expected_output` of the tasks in Cell 6 for more specific instructions or different output formats.
+*   **Number of players:** Modify the goal/description in `market_player_identifier` (Agent 1) and `task_identify_players` (Task 1) to change the number of companies researched (e.g., top 3, top 10). Adjust subsequent tasks accordingly if needed.
+*   **Agent prompts:** Refine the `role`, `goal`, and `backstory` of the agents in Cell 5 to steer their behavior.
+*   **Task descriptions:** Modify the `description` and `expected_output` of the tasks in Cell 6 for more specific instructions or different output formats.
 *   **Tools:** Experiment with different `crewai-tools` (like `CSVSearchTool`, `DirectorySearchTool`, etc.) if you have structured data sources. You might need to provide file paths or other configurations.
 *   **LLM:** Change the model used in Cell 4 based on your cost/performance needs.
 
-## Disclaimer & Limitations
+## Disclaimer & limitations
 
-*   **API Costs:** Running this crew, especially with GPT-4, will incur costs on your OpenAI account based on token usage. Monitor your usage.
-*   **Web Scraping Fragility:** The web reading/scraping tools (`WebsiteSearchTool`, `ScrapeWebsiteTool`) might fail on websites with heavy JavaScript or anti-scraping measures. Results may vary.
-*   **LLM Hallucinations:** AI models can sometimes generate inaccurate or fabricated information ("hallucinations"). The quality of the final report depends heavily on the LLM's capabilities and the information it can access.
-*   **Rate Limits:** You might encounter API rate limits from OpenAI or Serper, especially on free tiers or during high usage.
-*   **Information Accuracy:** The analysis is based on publicly available information retrieved by the agents at the time of execution. Always verify critical information from primary sources.
+*   **API costs:** Running this crew, especially with GPT-4, will incur costs on your OpenAI account based on token usage. Monitor your usage.
+*   **Web scraping fragility:** The web reading/scraping tools (`WebsiteSearchTool`, `ScrapeWebsiteTool`) might fail on websites with heavy JavaScript or anti-scraping measures. Results may vary.
+*   **LLM hallucinations:** AI models can sometimes generate inaccurate or fabricated information ("hallucinations"). The quality of the final report depends heavily on the LLM's capabilities and the information it can access.
+*   **Rate limits:** You might encounter API rate limits from OpenAI or Serper, especially on free tiers or during high usage.
+*   **Information accuracy:** The analysis is based on publicly available information retrieved by the agents at the time of execution. Always verify critical information from primary sources.
